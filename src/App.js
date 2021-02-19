@@ -1,8 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [asked, setAsked] = useState(false);
+
+  useEffect(() => {
+    console.log("Listening for beforeinstallprompt...");
+    window.addEventListener("beforeinstallprompt", (e) => {
+      console.log("Heard beforeinstallprompt, trying to setup...");
+      e.preventDefault(); // Test this on/off - When disabled it should show the mini-info bar
+      setAsked(true);
+    });
+
+    return () => {
+      window.removeEventListener("beforeinstallprompt", () => {
+        console.log("Removed eventlistener");
+      });
+    };
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -10,17 +27,10 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {asked && <div>OLEEEEEEE</div>}
       </header>
     </div>
   );
-}
+};
 
 export default App;
