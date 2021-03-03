@@ -8,7 +8,7 @@ const App = () => {
   useEffect(() => {
     console.log("Listening for beforeinstallprompt...");
     window.addEventListener("beforeinstallprompt", (e) => {
-      console.log("Heard beforeinstallprompt, trying to setup...");
+      console.log("Heard beforeinstallprompt, trying to setup..");
       e.preventDefault(); // Test this on/off - When disabled it should show the mini-info bar
       setPrompt(e);
     });
