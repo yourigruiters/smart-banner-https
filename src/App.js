@@ -40,6 +40,7 @@ const App = () => {
 
   useEffect(() => {
     if (prompt) {
+      alert("showing...");
       // Show the prompt
       prompt.prompt();
       // Wait for the user to respond to the prompt
@@ -51,6 +52,8 @@ const App = () => {
         }
         setPrompt(null);
       });
+    } else {
+      alert("en doooor...");
     }
   }, [prompt]);
 
