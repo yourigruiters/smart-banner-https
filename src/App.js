@@ -20,6 +20,12 @@ const App = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (prompt) {
+      openPrompt();
+    }
+  }, [prompt]);
+
   const openPrompt = () => {
     if (!prompt) {
       return;
@@ -42,7 +48,7 @@ const App = () => {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Version: 1.05 - No service-worker</p>
+        <p>Version: 1.06 - Auto open prompt</p>
         {prompt && <button onClick={openPrompt}>Open the prompt</button>}
       </header>
     </div>
