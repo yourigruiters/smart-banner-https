@@ -18,7 +18,7 @@ const App = () => {
       setPrompt(null);
     });
   };
-
+  console.log(openPrompt);
   useEffect(() => {
     window.addEventListener("beforeinstallprompt", (e) => {
       setPrompt(e);
@@ -36,7 +36,7 @@ const App = () => {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Version: 2.01 - Final implementation for showing banner</p>
-        {prompt && <button onClick={openPrompt}>Open the prompt</button>}
+        {/* {prompt && <button onClick={openPrompt}>Open the prompt</button>} */}
       </header>
     </div>
   );
