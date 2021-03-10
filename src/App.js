@@ -42,7 +42,7 @@ const App = () => {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Version: 1.04 - Actual Playstore app</p>
+        <p>Version: 1.05 - No service-worker</p>
         {prompt && <button onClick={openPrompt}>Open the prompt</button>}
       </header>
     </div>
